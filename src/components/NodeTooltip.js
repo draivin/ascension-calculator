@@ -6,14 +6,21 @@ export function NodeTooltip({ cluster, index }) {
   const node = CLUSTERS[cluster].nodes[index];
   const subnodes = node.subnodes;
 
-  const description = node.description;
+  const descriptionLines = node.description.replace(/»/g, '').split('\n');
   const subnodeDescriptions = [];
 
   if (subnodes && subnodes.length) {
     for (let i = 0; i < subnodes.length; i++) {
+      const subnodeLines = subnodes[i].replace(/»/g, '').split('\n');
+
       subnodeDescriptions.push(
-        <div>
-          {i + 1}) {subnodes[i].trim()}
+        <div className="subnode-description">
+          <span className="subnode-number">{i + 1})</span>
+          <span className="subnode-lines">
+            {subnodeLines.map((line) => (
+              <span className="description-line">{line}</span>
+            ))}
+          </span>
         </div>
       );
     }
@@ -21,7 +28,11 @@ export function NodeTooltip({ cluster, index }) {
 
   return (
     <div>
-      <div>{description}</div>
+      <div className="node-description">
+        {descriptionLines.map((line) => (
+          <span className="description-line">{line}</span>
+        ))}
+      </div>
       {subnodeDescriptions}
     </div>
   );

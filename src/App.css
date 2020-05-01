@@ -181,10 +181,40 @@ body {
 
 .tooltip {
   max-width: 500px;
+  padding: 6px 15px 5px !important;
 }
 
 .tooltip .multi-line {
   text-align: left !important;
+}
+
+.tooltip .node-description {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.tooltip .node-description .description-line:last-of-type:not(:empty) {
+  margin-bottom: 5px;
+}
+
+.tooltip .subnode-description {
+  display: flex;
+}
+
+.tooltip .subnode-description + .subnode-description {
+  margin-top: 3px;
+}
+
+.tooltip .subnode-lines {
+  display: flex;
+  flex-direction: column;
+}
+
+.tooltip .subnode-number {
+  margin-right: 5px;
+  font-weight: 600;
+  color: rgb(173, 146, 70);
 }
 
 .tooltip.show {
