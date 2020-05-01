@@ -17,7 +17,7 @@ function App() {
         </div>
         <Overview />
       </div>
-      <ReactTooltip className="tooltip" effect="solid" multiline="true" />
+      <ReactTooltip className="tooltip" effect="solid" html={true} multiline={true} />
     </CalculatorProvider>
   );
 }

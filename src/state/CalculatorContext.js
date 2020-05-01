@@ -4,16 +4,32 @@ import { isNodeSelectable, isClusterComplete, isNodeDeselectable, isValidState }
 
 export const CalculatorContext = React.createContext(null);
 
+const BONUS_REGEX = /\+1 (Force|Entropy|Form|Inertia|Life)./;
+
+function getBonusPoint({ cluster, index, subnode }) {
+  const node = CLUSTERS[cluster].nodes[index];
+
+  let bonusPoint = null;
+  let match = node.description.match(BONUS_REGEX);
+  if (subnode != -1 && !match) match = node.subnodes[subnode].match(BONUS_REGEX);
+  if (match) bonusPoint = match[1].toLowerCase();
+
+  return bonusPoint;
+}
+
 function reducer(state, action) {
   const newNodes = { ...state.nodes };
   const newPoints = { ...state.points };
   const node = action.node;
+  const nodeId = `${node.cluster}.${node.index}`;
   const cluster = CLUSTERS[node.cluster];
+
+  const bonusPoint = getBonusPoint(node);
 
   switch (action.type) {
     case 'select':
       if (!isNodeSelectable(node, state)) break;
-      newNodes[`${node.cluster}.${node.index}`] = node.subnode;
+      newNodes[nodeId] = node.subnode;
 
       if (isClusterComplete(cluster, { ...state, nodes: newNodes })) {
         for (let embodiment in cluster.rewards) {
@@ -21,9 +37,7 @@ function reducer(state, action) {
         }
       }
 
-      if (node.bonusPoint) {
-        newPoints[node.bonusPoint] += 1;
-      }
+      if (bonusPoint) newPoints[bonusPoint] += 1;
 
       break;
 
@@ -36,22 +50,17 @@ function reducer(state, action) {
         }
       }
 
-      if (node.bonusPoint) {
-        newPoints[node.bonusPoint] -= 1;
-      }
+      if (bonusPoint) newPoints[bonusPoint] -= 1;
 
-      delete newNodes[`${node.cluster}.${node.index}`];
+      delete newNodes[nodeId];
       break;
 
     case 'reselect':
-      if (node.bonusPoint) {
-        newPoints[node.bonusPoint] += 1;
-      }
-      if (node.prevBonusPoint) {
-        newPoints[node.prevBonusPoint] -= 1;
-      }
+      const prevBonusPoint = getBonusPoint({ ...node, subnode: state.nodes[nodeId] });
+      if (bonusPoint) newPoints[node.bonusPoint] += 1;
+      if (prevBonusPoint) newPoints[prevBonusPoint] -= 1;
 
-      newNodes[`${node.cluster}.${node.index}`] = node.subnode;
+      newNodes[nodeId] = node.subnode;
       break;
   }
 
