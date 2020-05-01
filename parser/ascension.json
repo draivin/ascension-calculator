@@ -1,7 +1,7 @@
 [
   {
     "name": "The Falcon",
-    "school": "force",
+    "embodiment": "force",
     "description": "Let the gale guide thought and thought fall like an arrow.",
     "requirements": {
       "force": 1
@@ -59,7 +59,7 @@
   },
   {
     "name": "The Hatchet",
-    "school": "force",
+    "embodiment": "force",
     "description": "Unity of muscle and steel separating life and limb.",
     "requirements": {
       "force": 1
@@ -117,7 +117,7 @@
   },
   {
     "name": "The Hornet",
-    "school": "force",
+    "embodiment": "force",
     "description": "The hive’s relentless fury.",
     "requirements": {
       "force": 1
@@ -157,7 +157,7 @@
   },
   {
     "name": "The Serpent",
-    "school": "force",
+    "embodiment": "force",
     "description": "Power shaped by subtlety cloaked in cunning.",
     "requirements": {
       "force": 1
@@ -197,7 +197,7 @@
   },
   {
     "name": "The Beetle",
-    "school": "life",
+    "embodiment": "life",
     "description": "Oneness of weapon and armor.",
     "requirements": {
       "life": 1
@@ -237,7 +237,7 @@
   },
   {
     "name": "The Hind",
-    "school": "life",
+    "embodiment": "life",
     "description": "Whose charity humbles the hunter. ",
     "requirements": {
       "life": 1
@@ -295,7 +295,7 @@
   },
   {
     "name": "The Lizard",
-    "school": "life",
+    "embodiment": "life",
     "description": "Scars fall away like shed skin. ",
     "requirements": {
       "life": 1
@@ -334,7 +334,7 @@
   },
   {
     "name": "The Rabbit",
-    "school": "life",
+    "embodiment": "life",
     "description": "Fortune magnifies the meek.",
     "requirements": {
       "life": 1
@@ -389,7 +389,7 @@
   },
   {
     "name": "The Chalice",
-    "school": "form",
+    "embodiment": "form",
     "description": "The cup that runneth over.",
     "requirements": {
       "form": 1
@@ -445,7 +445,7 @@
   },
   {
     "name": "The Key",
-    "school": "form",
+    "embodiment": "form",
     "description": "Unlock the mind and the flesh transforms.",
     "requirements": {
       "form": 1
@@ -507,7 +507,7 @@
   },
   {
     "name": "The Nautilus",
-    "school": "form",
+    "embodiment": "form",
     "description": "The coiled citadel contains oceans.",
     "requirements": {
       "form": 1
@@ -549,7 +549,7 @@
   },
   {
     "name": "The Silkworm",
-    "school": "form",
+    "embodiment": "form",
     "description": "None harm the one clothed in gold.",
     "requirements": {
       "form": 1
@@ -591,7 +591,7 @@
   },
   {
     "name": "The Armadillo",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "Savage blows batter the living fortress, meaningless as grains of sand scattered over a mountain.",
     "requirements": {
       "inertia": 1
@@ -630,7 +630,7 @@
   },
   {
     "name": "The Auroch",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "Endure until the plow no longer burdens.",
     "requirements": {
       "inertia": 1
@@ -669,7 +669,7 @@
   },
   {
     "name": "The Crab",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "The righteous rebuke conquers where a fool’s wrath cannot.",
     "requirements": {
       "inertia": 1
@@ -725,7 +725,7 @@
   },
   {
     "name": "The Guardsman",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "Yet the watchers guard.",
     "requirements": {
       "inertia": 1
@@ -783,7 +783,7 @@
   },
   {
     "name": "The Crow",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "The first to arrive at the universal feast finds every dish full.",
     "requirements": {
       "entropy": 1
@@ -824,7 +824,7 @@
   },
   {
     "name": "The Fly",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "Extinction’s herald reduces all flesh to its most basic function.",
     "requirements": {
       "entropy": 1
@@ -886,7 +886,7 @@
   },
   {
     "name": "The Vulture",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "The Baron of Vacuities collects the lost and returns them to his kingdom.",
     "requirements": {
       "entropy": 1
@@ -941,7 +941,7 @@
   },
   {
     "name": "The Wolf",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "Even famine feeds.",
     "requirements": {
       "entropy": 1
@@ -980,7 +980,7 @@
   },
   {
     "name": "The Arcanist",
-    "school": "force",
+    "embodiment": "force",
     "description": "Nameless power waits beyond the stars, like a sword anticipating a worthy hand.",
     "requirements": {
       "force": 5,
@@ -1036,7 +1036,7 @@
   },
   {
     "name": "The Archer",
-    "school": "force",
+    "embodiment": "force",
     "description": "The arrowhead entertains only one line of reasoning.",
     "requirements": {
       "force": 3,
@@ -1095,7 +1095,7 @@
   },
   {
     "name": "The Manticore",
-    "school": "force",
+    "embodiment": "force",
     "description": "Because flesh cannot feed famished wrath, cruelty hunts but never eats. ",
     "requirements": {
       "force": 5,
@@ -1152,7 +1152,7 @@
   },
   {
     "name": "The Scorpion",
-    "school": "force",
+    "embodiment": "force",
     "description": "The hand that assumes the shape of a sword seizes its truth. ",
     "requirements": {
       "force": 4,
@@ -1200,7 +1200,7 @@
   },
   {
     "name": "The Tiger",
-    "school": "force",
+    "embodiment": "force",
     "description": "The opened throat does not condemn the hunter, but pours out a river of praise.",
     "requirements": {
       "force": 4,
@@ -1249,7 +1249,7 @@
   },
   {
     "name": "The Enchantress",
-    "school": "life",
+    "embodiment": "life",
     "description": "The gilded cage still imprisons, and the silken cord yet restrains. ",
     "requirements": {
       "force": 1,
@@ -1305,7 +1305,7 @@
   },
   {
     "name": "The Huntress",
-    "school": "life",
+    "embodiment": "life",
     "description": "The master’s art disdains trophies and leaves no trace.",
     "requirements": {
       "force": 2,
@@ -1363,7 +1363,7 @@
   },
   {
     "name": "The Nymph",
-    "school": "life",
+    "embodiment": "life",
     "description": "Before the tyranny of beauty conquerors yield their crowns. ",
     "requirements": {
       "inertia": 1,
@@ -1420,7 +1420,7 @@
   },
   {
     "name": "Pegasus",
-    "school": "life",
+    "embodiment": "life",
     "description": "Majesty casts away the dross more easily than the wind shrugs off a manacle.",
     "requirements": {
       "inertia": 2,
@@ -1469,7 +1469,7 @@
   },
   {
     "name": "The Stag",
-    "school": "life",
+    "embodiment": "life",
     "description": "Compassion humbles arrow, sword, and spear.",
     "requirements": {
       "force": 2,
@@ -1518,7 +1518,7 @@
   },
   {
     "name": "The Basilisk",
-    "school": "form",
+    "embodiment": "form",
     "description": "Serenity strips the wrathful of their arrogance. ",
     "requirements": {
       "entropy": 2,
@@ -1569,7 +1569,7 @@
   },
   {
     "name": "Doppelganger",
-    "school": "form",
+    "embodiment": "form",
     "description": "Illusions vanish, but do not bleed. ",
     "requirements": {
       "entropy": 1,
@@ -1630,7 +1630,7 @@
   },
   {
     "name": "The Dragon",
-    "school": "form",
+    "embodiment": "form",
     "description": "Defiance feeds on dissent like a flame until only blazing rebellion remains.",
     "requirements": {
       "form": 5,
@@ -1688,7 +1688,7 @@
   },
   {
     "name": "The Gryphon",
-    "school": "form",
+    "embodiment": "form",
     "description": "The first to ascend builds a stair for those who follow.",
     "requirements": {
       "form": 4,
@@ -1737,7 +1737,7 @@
   },
   {
     "name": "Wealth",
-    "school": "form",
+    "embodiment": "form",
     "description": "Gold rebukes with a heavy hand.",
     "requirements": {
       "entropy": 1,
@@ -1800,7 +1800,7 @@
   },
   {
     "name": "The Casque",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "The steel skull shelters an iron will. ",
     "requirements": {
       "inertia": 5,
@@ -1856,7 +1856,7 @@
   },
   {
     "name": "The Centurion",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "Pay all debts in kind.",
     "requirements": {
       "form": 1,
@@ -1915,7 +1915,7 @@
   },
   {
     "name": "The Gladiator",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "Glorious deeds echo through eternity.",
     "requirements": {
       "form": 3,
@@ -1973,7 +1973,7 @@
   },
   {
     "name": "The Hippopotamus",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "Blows merely brush the dust from its hide.",
     "requirements": {
       "inertia": 4,
@@ -2021,7 +2021,7 @@
   },
   {
     "name": "The Rhinoceros",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "Tread heavily; strike mercilessly.",
     "requirements": {
       "form": 2,
@@ -2069,7 +2069,7 @@
   },
   {
     "name": "Blood Ape",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "At the gate of blood the faithful always find admittance.",
     "requirements": {
       "force": 1,
@@ -2131,7 +2131,7 @@
   },
   {
     "name": "Extinction",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "Mere annihilation does not end the contract.",
     "requirements": {
       "force": 2,
@@ -2181,7 +2181,7 @@
   },
   {
     "name": "The Imp",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "Malice delights in weakness.",
     "requirements": {
       "entropy": 5,
@@ -2237,7 +2237,7 @@
   },
   {
     "name": "The Hyena",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "Extremity of want turns bone to bread and marrow to wine.",
     "requirements": {
       "force": 1,
@@ -2293,7 +2293,7 @@
   },
   {
     "name": "The Supplicant",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "Ask of the lesser lest the greater not wish to answer.",
     "requirements": {
       "entropy": 4,
@@ -2344,7 +2344,7 @@
   },
   {
     "name": "The Conqueror",
-    "school": "force",
+    "embodiment": "force",
     "description": "Simple violence does not suffice, only dominion satisfies.",
     "requirements": {
       "force": 7,
@@ -2398,7 +2398,7 @@
   },
   {
     "name": "The Kraken",
-    "school": "force",
+    "embodiment": "force",
     "description": "Where the abyss rises cities fall.",
     "requirements": {
       "force": 7,
@@ -2449,7 +2449,7 @@
   },
   {
     "name": "Wrath",
-    "school": "force",
+    "embodiment": "force",
     "description": "Let the throne of rancor bathe in blood. ",
     "requirements": {
       "force": 8,
@@ -2502,7 +2502,7 @@
   },
   {
     "name": "The Goddess",
-    "school": "life",
+    "embodiment": "life",
     "description": "Whose radiance ignites stars and incinerates galaxies.",
     "requirements": {
       "force": 1,
@@ -2556,7 +2556,7 @@
   },
   {
     "name": "Hope",
-    "school": "life",
+    "embodiment": "life",
     "description": "The beacon burns brightest when shadowed by desperation.",
     "requirements": {
       "force": 5,
@@ -2610,7 +2610,7 @@
   },
   {
     "name": "Splendor",
-    "school": "life",
+    "embodiment": "life",
     "description": "Her glory engulfs all lesser lights like candles before the sun.",
     "requirements": {
       "force": 3,
@@ -2662,7 +2662,7 @@
   },
   {
     "name": "Cerberus",
-    "school": "form",
+    "embodiment": "form",
     "description": "Admit the worthy and despoil the weak. ",
     "requirements": {
       "entropy": 1,
@@ -2721,7 +2721,7 @@
   },
   {
     "name": "The Ritual",
-    "school": "form",
+    "embodiment": "form",
     "description": "Death unlocks time.",
     "requirements": {
       "entropy": 5,
@@ -2778,7 +2778,7 @@
   },
   {
     "name": "Sphinx",
-    "school": "form",
+    "embodiment": "form",
     "description": "Wisdom conquers fortune.",
     "requirements": {
       "entropy": 2,
@@ -2832,7 +2832,7 @@
   },
   {
     "name": "The Arena",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "Triumph only favors those who sacrifice everything.",
     "requirements": {
       "form": 1,
@@ -2884,7 +2884,7 @@
   },
   {
     "name": "Champion",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "The torch that blinds the darkness.",
     "requirements": {
       "form": 2,
@@ -2937,7 +2937,7 @@
   },
   {
     "name": "Fortress",
-    "school": "inertia",
+    "embodiment": "inertia",
     "description": "The view from the ramparts reveals a landscape of victory.",
     "requirements": {
       "form": 5,
@@ -2989,7 +2989,7 @@
   },
   {
     "name": "Death",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "On the final day only one will remain.",
     "requirements": {
       "force": 2,
@@ -3042,7 +3042,7 @@
   },
   {
     "name": "Decay",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "The hand that grinds mountains to motes of dust.",
     "requirements": {
       "force": 5,
@@ -3095,7 +3095,7 @@
   },
   {
     "name": "Demilich",
-    "school": "entropy",
+    "embodiment": "entropy",
     "description": "You should not have come to this place.",
     "requirements": {
       "force": 1,

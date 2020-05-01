@@ -16,13 +16,15 @@ export function Cluster(props) {
   const isComplete = isAvailable && isClusterComplete(cluster, calculator.state.nodes);
 
   const requirements = [];
-  for (let school in cluster.requirements) {
-    requirements.push(<div className={`point ${school}`}>{cluster.requirements[school]}</div>);
+  for (let embodiment in cluster.requirements) {
+    requirements.push(
+      <div className={`point ${embodiment}`}>{cluster.requirements[embodiment]}</div>
+    );
   }
 
   const rewards = [];
-  for (let school in cluster.rewards) {
-    rewards.push(<div className={`point ${school}`}>{cluster.rewards[school]}</div>);
+  for (let embodiment in cluster.rewards) {
+    rewards.push(<div className={`point ${embodiment}`}>{cluster.rewards[embodiment]}</div>);
   }
 
   for (let i = 0; i < cluster.nodes.length; i++) {

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CalculatorContext, schoolNames, clusters } from './CalculatorContext';
+import { CalculatorContext, embodimentNames, clusters } from './CalculatorContext';
 
 const VALUE_MODIFIER_REGEX = /^\+(\d+)(.*)/;
 
@@ -8,8 +8,8 @@ export function Overview() {
   const state = calculator.state;
 
   const points = [];
-  for (let school of schoolNames) {
-    points.push(<div className={`point ${school}`}>{calculator.state.points[school]}</div>);
+  for (let embodiment of embodimentNames) {
+    points.push(<div className={`point ${embodiment}`}>{calculator.state.points[embodiment]}</div>);
   }
 
   const valueModifiers = {};

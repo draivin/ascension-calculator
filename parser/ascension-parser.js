@@ -15,8 +15,8 @@ function parsePoints(line) {
 
   const points = {};
   for (let entry of entries) {
-    const [value, school] = entry.split(' ');
-    points[school] = Number(value);
+    const [value, embodiment] = entry.split(' ');
+    points[embodiment] = Number(value);
   }
 
   return points;
@@ -24,8 +24,8 @@ function parsePoints(line) {
 
 function parseCluster(x, y) {
   const rawName = records[y][x];
-  let [school, name] = rawName.split(':').map((s) => s.trim());
-  school = school.toLowerCase();
+  let [embodiment, name] = rawName.split(':').map((s) => s.trim());
+  embodiment = embodiment.toLowerCase();
 
   const description = records[y + 1][x];
 
@@ -55,7 +55,7 @@ function parseCluster(x, y) {
 
   return {
     name,
-    school,
+    embodiment,
     description,
     requirements,
     rewards,

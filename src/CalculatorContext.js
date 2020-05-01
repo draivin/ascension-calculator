@@ -1,20 +1,20 @@
 import React, { useReducer } from 'react';
 
 const ascensionData = require('./ascension.json');
-export const schoolNames = ['force', 'entropy', 'form', 'inertia', 'life'];
+export const embodimentNames = ['force', 'entropy', 'form', 'inertia', 'life'];
 export const clusters = { root: { nodes: {}, rewards: {} } };
-export const schools = {};
-schoolNames.forEach(
-  (school) =>
-    (clusters.root.nodes[school] = {
-      description: `+1 ${school[0].toUpperCase()}${school.substring(1)}.`,
+export const embodiments = {};
+embodimentNames.forEach(
+  (embodiment) =>
+    (clusters.root.nodes[embodiment] = {
+      description: `+1 ${embodiment[0].toUpperCase()}${embodiment.substring(1)}.`,
     })
 );
-schoolNames.forEach((school) => (schools[school] = []));
+embodimentNames.forEach((embodiment) => (embodiments[embodiment] = []));
 
 for (let cluster of ascensionData) {
   clusters[cluster.name] = cluster;
-  schools[cluster.school].push(cluster);
+  embodiments[cluster.embodiment].push(cluster);
 }
 
 export const CalculatorContext = React.createContext(null);
@@ -52,8 +52,8 @@ export function isClusterComplete(cluster, selectedNodes) {
 }
 
 export function isClusterAvailable(cluster, state) {
-  for (let school in cluster.requirements) {
-    if (state.points[school] < cluster.requirements[school]) return false;
+  for (let embodiment in cluster.requirements) {
+    if (state.points[embodiment] < cluster.requirements[embodiment]) return false;
   }
 
   return true;
@@ -67,8 +67,8 @@ function isValidState({ nodes, points }) {
 
   for (let clusterName in clusterNames) {
     const cluster = clusters[clusterName];
-    for (let school in cluster.requirements) {
-      if (points[school] < cluster.requirements[school]) {
+    for (let embodiment in cluster.requirements) {
+      if (points[embodiment] < cluster.requirements[embodiment]) {
         return false;
       }
     }
@@ -89,8 +89,8 @@ function reducer(state, action) {
       newNodes[`${node.cluster}.${node.index}`] = node.subnode;
 
       if (isClusterComplete(cluster, newNodes)) {
-        for (let school in cluster.rewards) {
-          newPoints[school] += cluster.rewards[school];
+        for (let embodiment in cluster.rewards) {
+          newPoints[embodiment] += cluster.rewards[embodiment];
         }
       }
 
@@ -104,8 +104,8 @@ function reducer(state, action) {
       if (!isNodeDeselectable(node, state)) break;
 
       if (cluster && isClusterComplete(cluster, newNodes)) {
-        for (let school in cluster.rewards) {
-          newPoints[school] -= cluster.rewards[school];
+        for (let embodiment in cluster.rewards) {
+          newPoints[embodiment] -= cluster.rewards[embodiment];
         }
       }
 

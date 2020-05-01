@@ -52,7 +52,7 @@ body {
   background-color: rgb(81, 47, 13);
 }
 
-.school {
+.embodiment {
   display: flex;
   background-color: rgb(20, 20, 20);
   padding: 10px 20px;
@@ -61,7 +61,7 @@ body {
   margin-left: 10px;
 }
 
-.school-name {
+.embodiment-name {
   width: 90px;
   text-transform: capitalize;
   font-size: 20px;

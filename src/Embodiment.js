@@ -1,19 +1,19 @@
 import React from 'react';
 import { Node } from './Node';
 import { Cluster } from './Cluster';
-import { schools } from './CalculatorContext';
+import { embodiments } from './CalculatorContext';
 
-export function School(props) {
+export function Embodiment(props) {
   const clusters = [];
-  const school = schools[props.name];
+  const embodiment = embodiments[props.name];
 
-  for (let cluster of school) {
+  for (let cluster of embodiment) {
     clusters.push(<Cluster name={cluster.name} />);
   }
 
   return (
-    <div className="school">
-      <div className="school-name">
+    <div className="embodiment">
+      <div className="embodiment-name">
         {props.name}
         <Node cluster="root" index={props.name} />
       </div>
