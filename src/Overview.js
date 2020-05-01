@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CalculatorContext, embodimentNames, clusters } from './CalculatorContext';
 
-const VALUE_MODIFIER_REGEX = /^\+(\d+)(.*)/;
+const VALUE_MODIFIER_REGEX = /^\+([\d.]+)(.*)/;
 
 const categories = [
   {
@@ -17,11 +17,11 @@ const categories = [
     regex: /\+\d+ (force|entropy|form|inertia|life)\./,
   },
   {
-    header: 'Resistance',
+    header: 'Resistances',
     regex: /\+\d+% .*(resistance|to elemental resistances)\./,
   },
   {
-    header: 'Skill',
+    header: 'Skills',
     regex: /\+\d+ (ranged|single-handed|two-handed|leadership|perseverance|retribution|aerotheurge|geomancer|huntsman|hydrosophist|necromancer|polymorph|pyrokinetic|scoundrel|summoning|warfare|sourcery)\./,
   },
 ];
