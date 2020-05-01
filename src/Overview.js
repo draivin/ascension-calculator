@@ -6,23 +6,27 @@ const VALUE_MODIFIER_REGEX = /^\+([\d.]+)(.*)/;
 const categories = [
   {
     header: 'Attributes',
-    regex: /\+\d+(% invested)? (strength|constitution|power|finesse|wits|memory)\./,
-  },
-  {
-    header: 'Stats',
-    regex: /\+[\d.]+%? (initiative|critical chance|accuracy|damage|movement speed|lifesteal|maximum vitality)\./,
-  },
-  {
-    header: 'Embodiments',
-    regex: /\+\d+ (force|entropy|form|inertia|life)\./,
-  },
-  {
-    header: 'Resistances',
-    regex: /\+\d+% .*(resistance|to elemental resistances)\./,
+    regex: /^\+\d+(% invested)? (strength|constitution|power|finesse|wits|memory)\./,
   },
   {
     header: 'Skills',
-    regex: /\+\d+ (ranged|single-handed|two-handed|leadership|perseverance|retribution|aerotheurge|geomancer|huntsman|hydrosophist|necromancer|polymorph|pyrokinetic|scoundrel|summoning|warfare|sourcery)\./,
+    regex: /^\+\d+ (ranged|single-handed|two-handed|leadership|perseverance|retribution|aerotheurge|geomancer|huntsman|hydrosophist|necromancer|polymorph|pyrokinetic|scoundrel|summoning|warfare|sourcery)\./,
+  },
+  {
+    header: 'Stats',
+    regex: /^\+[\d.]+%? (initiative|critical chance|accuracy|damage|movement speed|lifesteal|maximum vitality|dodge chance)\./,
+  },
+  {
+    header: 'Resistances',
+    regex: /^\+\d+% ((water|fire|air|earth|poison|physical|piercing) resistance|to elemental resistances)\./,
+  },
+  {
+    header: 'Summons',
+    regex: /^\+\d+.*summon.*/,
+  },
+  {
+    header: 'Embodiments',
+    regex: /^\+\d+ (force|entropy|form|inertia|life)\./,
   },
 ];
 
