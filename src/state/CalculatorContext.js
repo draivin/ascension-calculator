@@ -1,6 +1,12 @@
 import React, { useReducer } from 'react';
 import { CLUSTERS } from '../dataset';
-import { isNodeSelectable, isClusterComplete, isNodeDeselectable, isValidState } from './util';
+import {
+  isNodeSelectable,
+  isClusterComplete,
+  isNodeDeselectable,
+  isValidState,
+  getNodeId,
+} from './util';
 
 export const CalculatorContext = React.createContext(null);
 
@@ -17,16 +23,16 @@ function getBonusPoint({ cluster, index, subnode }) {
   return bonusPoint;
 }
 
-function reducer(state, action) {
+function reducer(state, { type, node }) {
+  const nodeId = getNodeId(node);
+  const cluster = CLUSTERS[node.cluster];
+
   const newNodes = { ...state.nodes };
   const newPoints = { ...state.points };
-  const node = action.node;
-  const nodeId = `${node.cluster}.${node.index}`;
-  const cluster = CLUSTERS[node.cluster];
 
   const bonusPoint = getBonusPoint(node);
 
-  switch (action.type) {
+  switch (type) {
     case 'select':
       if (!isNodeSelectable(node, state)) break;
       newNodes[nodeId] = node.subnode;
@@ -57,7 +63,7 @@ function reducer(state, action) {
 
     case 'reselect':
       const prevBonusPoint = getBonusPoint({ ...node, subnode: state.nodes[nodeId] });
-      if (bonusPoint) newPoints[node.bonusPoint] += 1;
+      if (bonusPoint) newPoints[bonusPoint] += 1;
       if (prevBonusPoint) newPoints[prevBonusPoint] -= 1;
 
       newNodes[nodeId] = node.subnode;

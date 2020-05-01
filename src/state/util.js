@@ -19,8 +19,12 @@ export function isNodeDeselectable(node, state) {
   return !isNodeSelected({ ...node, index: node.index + 1 }, state);
 }
 
+export function getNodeId(node) {
+  return `${node.cluster}.${node.index}`;
+}
+
 export function getSelectedSubnode(node, state) {
-  return state.nodes[`${node.cluster}.${node.index}`];
+  return state.nodes[getNodeId(node)];
 }
 
 export function isClusterComplete(cluster, state) {

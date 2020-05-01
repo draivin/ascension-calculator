@@ -13,7 +13,7 @@ export function Node({ cluster, index }) {
   const selectedSubnode = isSelected && getSelectedSubnode(nodeInfo, state);
   const node = CLUSTERS[cluster].nodes[index];
 
-  function onClick(subnode) {
+  function handler(subnode) {
     if (!isSelected) {
       dispatch({
         type: 'select',
@@ -27,7 +27,7 @@ export function Node({ cluster, index }) {
     } else {
       dispatch({
         type: 'deselect',
-        node: { ...nodeInfo },
+        node: { subnode, ...nodeInfo },
       });
     }
   }
@@ -38,7 +38,7 @@ export function Node({ cluster, index }) {
       subnodeElements.push(
         <div
           className={classNames('subnode', { selected: isSelected && selectedSubnode == i })}
-          onClick={() => onClick(i)}
+          onClick={() => handler(i)}
         >
           {i + 1}
         </div>
@@ -58,7 +58,7 @@ export function Node({ cluster, index }) {
       <div
         data-tip={tooltipHtml(nodeInfo)}
         className={classNames('node', { selected: isSelected, selectable: isSelectable })}
-        onClick={() => onClick(-1)}
+        onClick={() => handler(-1)}
       ></div>
     );
   }
