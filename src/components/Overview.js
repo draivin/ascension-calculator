@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CalculatorContext } from '../state/CalculatorContext';
 import { EMBODIMENT_NAMES, CLUSTERS } from '../dataset';
+import { SearchBox } from './SearchBox';
 
 const VALUE_MODIFIER_REGEX = /^\+([\d.]+)(.*)/;
 
@@ -147,15 +148,19 @@ export function Overview() {
   }
 
   return (
-    <div className="overview">
-      <div className="total-points points">
-        <div className="points-name">Available Ascension:</div> {points}
-      </div>
-      <div className="points-used">Points used: {Object.keys(state.nodes).length}</div>
+    <div className="overview-container">
+      <div className="overview">
+        <div className="total-points points">
+          <div className="points-name">Available Ascension:</div> {points}
+        </div>
+        <div className="points-used">Points used: {Object.keys(state.nodes).length}</div>
+        <div className="search-header">Search:</div>
+        <SearchBox />
 
-      <div className="description">
-        <div className="description-title">Bonuses overview:</div>
-        {categoryElements}
+        <div className="description">
+          <div className="description-title">Bonuses overview:</div>
+          {categoryElements}
+        </div>
       </div>
     </div>
   );

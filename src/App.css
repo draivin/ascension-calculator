@@ -11,6 +11,8 @@ body {
 
 .calculator {
   display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .points {
@@ -140,6 +142,14 @@ body {
   opacity: 0.3;
 }
 
+.node.filtered {
+  opacity: 0.1;
+}
+
+.node.filtered:not(.selectable):not(.selected) {
+  opacity: 0.05;
+}
+
 .node.subnodes {
   display: flex;
 }
@@ -164,11 +174,20 @@ body {
   color: rgba(255, 255, 255, 0.4);
 }
 
+.overview-container {
+  margin-left: 10px;
+  max-width: 500px;
+  flex-grow: 1;
+}
+
 .overview {
-  position: fixed;
-  left: 1000px;
-  top: 10px;
+  position: sticky;
+  top: 0px;
+  padding-top: 15px;
   font-size: 14px;
+  box-sizing: border-box;
+  max-height: 100vh;
+  overflow: auto;
 }
 
 .category {
@@ -226,8 +245,20 @@ body {
   margin-right: 10px;
 }
 
+.search-header {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.searchbox {
+  background-color: rgb(50, 50, 50);
+  border: 1px solid rgb(70, 70, 70);
+  color: white;
+}
+
 .points-used,
-.description-title {
+.description-title,
+.search-header {
   color: white;
   font-weight: 600;
   font-size: 16px;

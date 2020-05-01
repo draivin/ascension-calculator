@@ -15,6 +15,12 @@ export function Node({ cluster, index }) {
 
   const node = CLUSTERS[cluster].nodes[index];
 
+  let text = node.description;
+  if (node.subnodes) text += node.subnodes.join(' ');
+  text = text.toLowerCase();
+
+  const matchesFilter = !state.filter || text.includes(state.filter);
+
   function handler(subnode) {
     if (!isSelected) {
       dispatch({
@@ -34,6 +40,12 @@ export function Node({ cluster, index }) {
     }
   }
 
+  const className = classNames('node', {
+    selected: isSelected,
+    selectable: isSelectable,
+    filtered: !matchesFilter,
+  });
+
   if (node.subnodes && node.subnodes.length) {
     const subnodeElements = [];
     for (let i = 0; i < node.subnodes.length; i++) {
@@ -48,20 +60,13 @@ export function Node({ cluster, index }) {
     }
 
     return (
-      <div
-        data-tip={tooltipHtml(nodeInfo)}
-        className={classNames('node subnodes', { selected: isSelected, selectable: isSelectable })}
-      >
+      <div data-tip={tooltipHtml(nodeInfo)} className={classNames(className, 'subnodes')}>
         {subnodeElements}
       </div>
     );
   } else {
     return (
-      <div
-        data-tip={tooltipHtml(nodeInfo)}
-        className={classNames('node', { selected: isSelected, selectable: isSelectable })}
-        onClick={() => handler(-1)}
-      ></div>
+      <div data-tip={tooltipHtml(nodeInfo)} className={className} onClick={() => handler(-1)}></div>
     );
   }
 }
