@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ascension-calculator/static/css/main.45289257.chunk.css",
-    "main.js": "/ascension-calculator/static/js/main.d21ce065.chunk.js",
-    "main.js.map": "/ascension-calculator/static/js/main.d21ce065.chunk.js.map",
+    "main.js": "/ascension-calculator/static/js/main.3b3ae563.chunk.js",
+    "main.js.map": "/ascension-calculator/static/js/main.3b3ae563.chunk.js.map",
     "runtime-main.js": "/ascension-calculator/static/js/runtime-main.f466fe3f.js",
     "runtime-main.js.map": "/ascension-calculator/static/js/runtime-main.f466fe3f.js.map",
     "static/js/2.1b4f3547.chunk.js": "/ascension-calculator/static/js/2.1b4f3547.chunk.js",
     "static/js/2.1b4f3547.chunk.js.map": "/ascension-calculator/static/js/2.1b4f3547.chunk.js.map",
     "index.html": "/ascension-calculator/index.html",
-    "precache-manifest.4f1b02ddef32a86f5bf5ae2e2447b70d.js": "/ascension-calculator/precache-manifest.4f1b02ddef32a86f5bf5ae2e2447b70d.js",
+    "precache-manifest.6f9ba6dcb00e28021393f3fdf0c0f192.js": "/ascension-calculator/precache-manifest.6f9ba6dcb00e28021393f3fdf0c0f192.js",
     "service-worker.js": "/ascension-calculator/service-worker.js",
     "static/css/main.45289257.chunk.css.map": "/ascension-calculator/static/css/main.45289257.chunk.css.map",
     "static/js/2.1b4f3547.chunk.js.LICENSE.txt": "/ascension-calculator/static/js/2.1b4f3547.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f466fe3f.js",
     "static/js/2.1b4f3547.chunk.js",
     "static/css/main.45289257.chunk.css",
-    "static/js/main.d21ce065.chunk.js"
+    "static/js/main.3b3ae563.chunk.js"
   ]
 }
