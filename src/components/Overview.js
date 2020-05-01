@@ -29,6 +29,18 @@ const categories = [
     header: 'Embodiments',
     regex: /^\+\d+ (force|entropy|form|inertia|life)\./,
   },
+  {
+    header: 'Predator',
+    regex: /predator/,
+  },
+  {
+    header: 'Voracity',
+    regex: /voracity/,
+  },
+  {
+    header: 'Elementalist',
+    regex: /elementalist/,
+  },
 ];
 
 function collectModifiers(state) {
