@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "988facae9bef9f05eb48474e09c55a11",
+    "revision": "ab15b0384d343ff78cbedda9293c184a",
     "url": "/ascension-calculator/index.html"
   },
   {
-    "revision": "2e9e1ab619245c6eb7b4",
+    "revision": "d4a13e1040a9c1b35ffe",
     "url": "/ascension-calculator/static/css/main.45289257.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ascension-calculator/static/js/2.1b4f3547.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2e9e1ab619245c6eb7b4",
-    "url": "/ascension-calculator/static/js/main.3b3ae563.chunk.js"
+    "revision": "d4a13e1040a9c1b35ffe",
+    "url": "/ascension-calculator/static/js/main.1affd4eb.chunk.js"
   },
   {
     "revision": "18b0a05991369703029f",
