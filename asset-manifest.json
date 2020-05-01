@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/ascension-calculator/static/css/main.3a285027.chunk.css",
-    "main.js": "/ascension-calculator/static/js/main.f8224f97.chunk.js",
-    "main.js.map": "/ascension-calculator/static/js/main.f8224f97.chunk.js.map",
+    "main.css": "/ascension-calculator/static/css/main.eba2535f.chunk.css",
+    "main.js": "/ascension-calculator/static/js/main.ddbda10d.chunk.js",
+    "main.js.map": "/ascension-calculator/static/js/main.ddbda10d.chunk.js.map",
     "runtime-main.js": "/ascension-calculator/static/js/runtime-main.f466fe3f.js",
     "runtime-main.js.map": "/ascension-calculator/static/js/runtime-main.f466fe3f.js.map",
     "static/js/2.79b97f8e.chunk.js": "/ascension-calculator/static/js/2.79b97f8e.chunk.js",
     "static/js/2.79b97f8e.chunk.js.map": "/ascension-calculator/static/js/2.79b97f8e.chunk.js.map",
     "index.html": "/ascension-calculator/index.html",
-    "precache-manifest.6b7915a531bd50f9c77f8b61b37e1818.js": "/ascension-calculator/precache-manifest.6b7915a531bd50f9c77f8b61b37e1818.js",
+    "precache-manifest.a514c03f99527604bfad07993cfdb483.js": "/ascension-calculator/precache-manifest.a514c03f99527604bfad07993cfdb483.js",
     "service-worker.js": "/ascension-calculator/service-worker.js",
-    "static/css/main.3a285027.chunk.css.map": "/ascension-calculator/static/css/main.3a285027.chunk.css.map",
+    "static/css/main.eba2535f.chunk.css.map": "/ascension-calculator/static/css/main.eba2535f.chunk.css.map",
     "static/js/2.79b97f8e.chunk.js.LICENSE.txt": "/ascension-calculator/static/js/2.79b97f8e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f466fe3f.js",
     "static/js/2.79b97f8e.chunk.js",
-    "static/css/main.3a285027.chunk.css",
-    "static/js/main.f8224f97.chunk.js"
+    "static/css/main.eba2535f.chunk.css",
+    "static/js/main.ddbda10d.chunk.js"
   ]
 }

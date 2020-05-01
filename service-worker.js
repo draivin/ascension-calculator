@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ascension-calculator/precache-manifest.6b7915a531bd50f9c77f8b61b37e1818.js"
+  "/ascension-calculator/precache-manifest.a514c03f99527604bfad07993cfdb483.js"
 );
 
 self.addEventListener('message', (event) => {
