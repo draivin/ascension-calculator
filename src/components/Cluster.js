@@ -1,16 +1,13 @@
 import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { Node } from './Node';
-import {
-  CalculatorContext,
-  isClusterAvailable,
-  isClusterComplete,
-  clusters,
-} from './CalculatorContext';
+import { CLUSTERS } from '../dataset';
+import { CalculatorContext } from '../state/CalculatorContext';
+import { isClusterAvailable, isClusterComplete } from '../state/util';
 
 export function Cluster(props) {
   const nodes = [];
-  const cluster = clusters[props.name];
+  const cluster = CLUSTERS[props.name];
   const calculator = useContext(CalculatorContext);
   const isAvailable = isClusterAvailable(cluster, calculator.state);
   const isComplete = isAvailable && isClusterComplete(cluster, calculator.state.nodes);

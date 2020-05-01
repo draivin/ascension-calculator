@@ -1,12 +1,8 @@
 import React, { useContext } from 'react';
 import classNames from 'classnames';
-import {
-  CalculatorContext,
-  isNodeSelectable,
-  isNodeSelected,
-  getSelectedSubnode,
-  clusters,
-} from './CalculatorContext';
+import { CalculatorContext } from '../state/CalculatorContext';
+import { isNodeSelected, isNodeSelectable, getSelectedSubnode } from '../state/util';
+import { CLUSTERS } from '../dataset';
 
 const BONUS_REGEX = /\+1 (Force|Entropy|Form|Inertia|Life)./;
 
@@ -15,7 +11,7 @@ export function Node(props) {
   const isSelected = isNodeSelected(props, calculator.state.nodes);
   const isSelectable = !isSelected && isNodeSelectable(props, calculator.state);
   const selectedSubnode = isSelected && getSelectedSubnode(props, calculator.state.nodes);
-  const node = clusters[props.cluster].nodes[props.index];
+  const node = CLUSTERS[props.cluster].nodes[props.index];
 
   function onClick(subnode) {
     let bonusPoint;

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { CalculatorContext, embodimentNames, clusters } from './CalculatorContext';
+import { CalculatorContext } from '../state/CalculatorContext';
+import { EMBODIMENT_NAMES, CLUSTERS } from '../dataset';
 
 const VALUE_MODIFIER_REGEX = /^\+([\d.]+)(.*)/;
 
@@ -35,7 +36,7 @@ export function Overview() {
   const state = calculator.state;
 
   const points = [];
-  for (let embodiment of embodimentNames) {
+  for (let embodiment of EMBODIMENT_NAMES) {
     points.push(<div className={`point ${embodiment}`}>{calculator.state.points[embodiment]}</div>);
   }
 
@@ -61,7 +62,7 @@ export function Overview() {
   for (let nodeId in state.nodes) {
     let [cluster, index] = nodeId.split('.');
 
-    const node = clusters[cluster].nodes[index];
+    const node = CLUSTERS[cluster].nodes[index];
     const subnode = state.nodes[nodeId];
 
     const modifier = node.description.trim();

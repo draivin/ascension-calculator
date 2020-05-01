@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
-import { Overview } from './Overview';
-import { Embodiment } from './Embodiment';
 import ReactTooltip from 'react-tooltip';
-import { CalculatorProvider, embodimentNames } from './CalculatorContext';
+import { CalculatorProvider } from './state/CalculatorContext';
+import { EMBODIMENT_NAMES } from './dataset';
+import { Embodiment } from './components/Embodiment';
+import { Overview } from './components/Overview';
 
 function App() {
   return (
     <CalculatorProvider>
       <div className="calculator">
         <div className="embodiments">
-          {embodimentNames.map((embodiment) => (
+          {EMBODIMENT_NAMES.map((embodiment) => (
             <Embodiment name={embodiment} />
           ))}
         </div>

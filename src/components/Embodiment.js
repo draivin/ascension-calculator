@@ -1,11 +1,11 @@
 import React from 'react';
 import { Node } from './Node';
 import { Cluster } from './Cluster';
-import { embodiments } from './CalculatorContext';
+import { EMBODIMENTS } from '../dataset';
 
 export function Embodiment(props) {
   const clusters = [];
-  const embodiment = embodiments[props.name];
+  const embodiment = EMBODIMENTS[props.name];
 
   for (let cluster of embodiment) {
     clusters.push(<Cluster name={cluster.name} />);
