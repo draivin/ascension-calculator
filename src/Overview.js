@@ -22,7 +22,7 @@ const categories = [
   },
   {
     header: 'Summons',
-    regex: /^\+\d+.*summon.*/,
+    regex: /^\+[\d.]+%? summon \w+( \w+)?\./,
   },
   {
     header: 'Embodiments',
@@ -76,7 +76,7 @@ export function Overview() {
 
   for (let description of Object.keys(valueModifiers)) {
     let value = valueModifiers[description];
-    modifiers.push(`+${value}${description}`);
+    modifiers.push(`+${Math.round(value * 10) / 10}${description}`);
   }
 
   modifiers.push(...textModifiers);
