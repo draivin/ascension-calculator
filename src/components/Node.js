@@ -6,11 +6,13 @@ import { CLUSTERS } from '../dataset';
 import { tooltipHtml } from './NodeTooltip';
 
 export function Node({ cluster, index }) {
-  const nodeInfo = { cluster, index };
   const { state, dispatch } = useContext(CalculatorContext);
+
+  const nodeInfo = { cluster, index };
   const isSelected = isNodeSelected(nodeInfo, state);
   const isSelectable = !isSelected && isNodeSelectable(nodeInfo, state);
   const selectedSubnode = isSelected && getSelectedSubnode(nodeInfo, state);
+
   const node = CLUSTERS[cluster].nodes[index];
 
   function handler(subnode) {

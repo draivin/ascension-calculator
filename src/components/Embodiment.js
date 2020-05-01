@@ -3,9 +3,9 @@ import { Node } from './Node';
 import { Cluster } from './Cluster';
 import { EMBODIMENTS } from '../dataset';
 
-export function Embodiment(props) {
+export function Embodiment({ name }) {
   const clusters = [];
-  const embodiment = EMBODIMENTS[props.name];
+  const embodiment = EMBODIMENTS[name];
 
   for (let cluster of embodiment) {
     clusters.push(<Cluster name={cluster.name} />);
@@ -14,8 +14,8 @@ export function Embodiment(props) {
   return (
     <div className="embodiment">
       <div className="embodiment-name">
-        {props.name}
-        <Node cluster="root" index={props.name} />
+        {name}
+        <Node cluster="root" index={name} />
       </div>
       <div className="clusters">{clusters}</div>
     </div>
