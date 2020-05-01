@@ -1,7 +1,7 @@
 import { CLUSTERS } from '../dataset';
 
-export function isNodeSelected(node, selectedNodes) {
-  return `${node.cluster}.${node.index}` in selectedNodes;
+export function isNodeSelected(node, state) {
+  return `${node.cluster}.${node.index}` in state.nodes;
 }
 
 export function isNodeSelectable(node, state) {
@@ -11,22 +11,21 @@ export function isNodeSelectable(node, state) {
   const clusterAvailable = isClusterAvailable(cluster, state);
   return (
     (clusterAvailable && node.index == 0) ||
-    (clusterAvailable &&
-      isNodeSelected({ cluster: node.cluster, index: node.index - 1 }, state.nodes))
+    (clusterAvailable && isNodeSelected({ ...node, index: node.index - 1 }, state))
   );
 }
 
 export function isNodeDeselectable(node, state) {
-  return !isNodeSelected({ cluster: node.cluster, index: node.index + 1 }, state.nodes);
+  return !isNodeSelected({ ...node, index: node.index + 1 }, state);
 }
 
-export function getSelectedSubnode(node, selectedNodes) {
-  return selectedNodes[`${node.cluster}.${node.index}`];
+export function getSelectedSubnode(node, state) {
+  return state.nodes[`${node.cluster}.${node.index}`];
 }
 
-export function isClusterComplete(cluster, selectedNodes) {
+export function isClusterComplete(cluster, state) {
   for (let i = 0; i < cluster.nodes.length; i++) {
-    if (!isNodeSelected({ cluster: cluster.name, index: i }, selectedNodes)) return false;
+    if (!isNodeSelected({ cluster: cluster.name, index: i }, state)) return false;
   }
 
   return true;

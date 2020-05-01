@@ -31,15 +31,7 @@ const categories = [
   },
 ];
 
-export function Overview() {
-  const calculator = useContext(CalculatorContext);
-  const state = calculator.state;
-
-  const points = [];
-  for (let embodiment of EMBODIMENT_NAMES) {
-    points.push(<div className={`point ${embodiment}`}>{calculator.state.points[embodiment]}</div>);
-  }
-
+function collectModifiers(state) {
   const valueModifiers = {};
   const textModifiers = [];
 
@@ -82,6 +74,18 @@ export function Overview() {
 
   modifiers.push(...textModifiers);
 
+  return modifiers;
+}
+
+export function Overview() {
+  const { state } = useContext(CalculatorContext);
+
+  const points = [];
+  for (let embodiment of EMBODIMENT_NAMES) {
+    points.push(<div className={`point ${embodiment}`}>{state.points[embodiment]}</div>);
+  }
+
+  const modifiers = collectModifiers(state);
   let modifiersByCategory = categories.map((c) => []);
   const otherModifiers = [];
 
@@ -106,6 +110,7 @@ export function Overview() {
   const categoryElements = [];
   for (let i = 0; i < categories.length; i++) {
     const category = categories[i];
+
     if (modifiersByCategory[i].length) {
       categoryElements.push(
         <div className="category">

@@ -15,7 +15,7 @@ function reducer(state, action) {
       if (!isNodeSelectable(node, state)) break;
       newNodes[`${node.cluster}.${node.index}`] = node.subnode;
 
-      if (isClusterComplete(cluster, newNodes)) {
+      if (isClusterComplete(cluster, { ...state, nodes: newNodes })) {
         for (let embodiment in cluster.rewards) {
           newPoints[embodiment] += cluster.rewards[embodiment];
         }
@@ -30,7 +30,7 @@ function reducer(state, action) {
     case 'deselect':
       if (!isNodeDeselectable(node, state)) break;
 
-      if (cluster && isClusterComplete(cluster, newNodes)) {
+      if (cluster && isClusterComplete(cluster, { ...state, nodes: newNodes })) {
         for (let embodiment in cluster.rewards) {
           newPoints[embodiment] -= cluster.rewards[embodiment];
         }

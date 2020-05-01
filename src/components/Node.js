@@ -7,10 +7,10 @@ import { CLUSTERS } from '../dataset';
 const BONUS_REGEX = /\+1 (Force|Entropy|Form|Inertia|Life)./;
 
 export function Node(props) {
-  const calculator = useContext(CalculatorContext);
-  const isSelected = isNodeSelected(props, calculator.state.nodes);
-  const isSelectable = !isSelected && isNodeSelectable(props, calculator.state);
-  const selectedSubnode = isSelected && getSelectedSubnode(props, calculator.state.nodes);
+  const { state, dispatch } = useContext(CalculatorContext);
+  const isSelected = isNodeSelected(props, state);
+  const isSelectable = !isSelected && isNodeSelectable(props, state);
+  const selectedSubnode = isSelected && getSelectedSubnode(props, state);
   const node = CLUSTERS[props.cluster].nodes[props.index];
 
   function onClick(subnode) {
@@ -21,7 +21,7 @@ export function Node(props) {
     if (match) bonusPoint = match[1].toLowerCase();
 
     if (!isSelected) {
-      calculator.dispatch({
+      dispatch({
         type: 'select',
         node: { subnode, bonusPoint, ...props },
       });
@@ -31,12 +31,12 @@ export function Node(props) {
         let match = node.subnodes[selectedSubnode].match(BONUS_REGEX);
         if (match) prevBonusPoint = match[1].toLowerCase();
 
-        calculator.dispatch({
+        dispatch({
           type: 'reselect',
           node: { subnode, bonusPoint, prevBonusPoint, ...props },
         });
       } else {
-        calculator.dispatch({
+        dispatch({
           type: 'deselect',
           node: { bonusPoint, ...props },
         });

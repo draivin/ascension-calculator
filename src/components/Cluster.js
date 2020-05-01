@@ -8,9 +8,9 @@ import { isClusterAvailable, isClusterComplete } from '../state/util';
 export function Cluster(props) {
   const nodes = [];
   const cluster = CLUSTERS[props.name];
-  const calculator = useContext(CalculatorContext);
-  const isAvailable = isClusterAvailable(cluster, calculator.state);
-  const isComplete = isAvailable && isClusterComplete(cluster, calculator.state.nodes);
+  const { state } = useContext(CalculatorContext);
+  const isAvailable = isClusterAvailable(cluster, state);
+  const isComplete = isAvailable && isClusterComplete(cluster, state);
 
   const requirements = [];
   for (let embodiment in cluster.requirements) {
