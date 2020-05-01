@@ -3,6 +3,29 @@ import { CalculatorContext, embodimentNames, clusters } from './CalculatorContex
 
 const VALUE_MODIFIER_REGEX = /^\+(\d+)(.*)/;
 
+const categories = [
+  {
+    header: 'Attributes',
+    regex: /\+\d+(% invested)? (strength|constitution|power|finesse|wits|memory)\./,
+  },
+  {
+    header: 'Stats',
+    regex: /\+[\d.]+%? (initiative|critical chance|accuracy|damage|movement speed|lifesteal|maximum vitality)\./,
+  },
+  {
+    header: 'Embodiments',
+    regex: /\+\d+ (force|entropy|form|inertia|life)\./,
+  },
+  {
+    header: 'Resistance',
+    regex: /\+\d+% .*(resistance|to elemental resistances)\./,
+  },
+  {
+    header: 'Skill',
+    regex: /\+\d+ (ranged|single-handed|two-handed|leadership|perseverance|retribution|aerotheurge|geomancer|huntsman|hydrosophist|necromancer|polymorph|pyrokinetic|scoundrel|summoning|warfare|sourcery)\./,
+  },
+];
+
 export function Overview() {
   const calculator = useContext(CalculatorContext);
   const state = calculator.state;
@@ -54,6 +77,53 @@ export function Overview() {
 
   modifiers.push(...textModifiers);
 
+  let modifiersByCategory = categories.map((c) => []);
+  const otherModifiers = [];
+
+  for (let modifier of modifiers) {
+    let hasCategory = false;
+
+    for (let i = 0; i < categories.length; i++) {
+      const category = categories[i];
+
+      if (modifier.toLowerCase().match(category.regex)) {
+        hasCategory = true;
+        modifiersByCategory[i].push(modifier);
+        break;
+      }
+    }
+
+    if (!hasCategory) {
+      otherModifiers.push(modifier);
+    }
+  }
+
+  const categoryElements = [];
+  for (let i = 0; i < categories.length; i++) {
+    const category = categories[i];
+    if (modifiersByCategory[i].length) {
+      categoryElements.push(
+        <div className="category">
+          <div className="category-header">{category.header}:</div>
+          {modifiersByCategory[i].map((m) => (
+            <div>{m}</div>
+          ))}
+        </div>
+      );
+    }
+  }
+
+  if (otherModifiers.length) {
+    categoryElements.push(
+      <div className="category">
+        <div className="category-header">Other bonuses:</div>
+        {otherModifiers.map((m) => (
+          <div>{m}</div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="overview">
       <div className="total-points points">
@@ -63,9 +133,7 @@ export function Overview() {
 
       <div className="description">
         <div className="description-title">Bonuses overview:</div>
-        {modifiers.map((m) => (
-          <div>{m}</div>
-        ))}
+        {categoryElements}
       </div>
     </div>
   );

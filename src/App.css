@@ -171,6 +171,14 @@ body {
   font-size: 14px;
 }
 
+.category {
+  margin: 10px 0;
+}
+
+.category-header {
+  font-weight: 600;
+}
+
 .tooltip {
   max-width: 500px;
 }
